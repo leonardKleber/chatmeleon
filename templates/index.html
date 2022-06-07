@@ -5,18 +5,18 @@
 </head>
 
 <body>
-    <div id="messages"></div>
+    <div>Welcome to CHATmeleon</div>
+    <form action="/chat">
+        <div>Username</div>
 
-    <input type="text" id="input_msg">
-    <button type="submit" id="send_msg" onclick="send_message()">SEND</button>
+        <div><input type="text" name="username"></div>
+
+        <div>App Password</div>
+
+        <div><input type="password" name="password"></div>
+
+        <button type="submit">Join</button>
+    </form>
 </body>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
-
-<script type="text/javascript">
-    const this_username = `{{ user }}`;
-</script>
-
-<script src="{{ url_for('static', filename='scripts/socketio.js') }}"></script>
 
 </html>
