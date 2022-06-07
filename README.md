@@ -6,6 +6,10 @@ This app is a software project for CHAMÄLEON Stralsund e.V., Germany. 
 Besides providing an internal communication service, it can also be used to play a game, including different roles with respective profile pictures 
 and role descriptions. The purpose of the game is to teach teenagers about the possible dangers of chatting with strangers on the internet.
 
+<p align="center">
+<img src="/static/images/logo.png" width="350">
+</p>
+
 ## Try out the project
 You can try out the app here:
 
