@@ -3,6 +3,7 @@ from flask_socketio import SocketIO, emit
 
 
 APP_PASSWORD = 'chat1223'
+USER_LIST = []
 
 
 app = Flask(__name__)
@@ -22,7 +23,10 @@ def chat():
     password = request.args.get('password')
 
     if username and password == APP_PASSWORD:
-        return render_template('chat.html', user=username)
+        USER_LIST.append(username)
+
+        # Return list without last entry -> added by client.
+        return render_template('chat.html', user=username, user_list=USER_LIST[:-1])
     
     return redirect(url_for('index'))
 

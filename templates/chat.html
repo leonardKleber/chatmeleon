@@ -2,6 +2,9 @@
 <html>
 <head>
 	<title>Chat Prototype</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
+    <link href="/static/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -11,13 +14,15 @@
         </div>
 
         <div class="member_list" id="member_list">
+            {% for i in user_list %}
             <div>
                 <div class="member">
                     <div class="member_name">
-                        <div></div>
+                        <div>{{ i }}</div>
                     </div>
                 </div>
             </div>
+            {% endfor%}
         </div>
 
         <div class="role_description" id="role_description">
