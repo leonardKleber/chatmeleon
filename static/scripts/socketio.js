@@ -25,8 +25,8 @@ socket.on('initial_connection', function(username) {
     msg_div.innerHTML = `<div class="join_announcement"><b>${username}</b> has joined the room</div>`;
     document.getElementById('messages').append(msg_div);
 
-    var new_user = document.createElement('div')
-    new_user.innerHTML = `<div class="member"><div class="member_name"><div>${username}</div></div></div>`
+    var new_user = document.createElement('div');
+    new_user.innerHTML = build_member_div(username);
     document.getElementById('member_list').appendChild(new_user);
 });
 
@@ -43,3 +43,32 @@ socket.on('user_message', function(data) {
 
     document.getElementById('messages').append(msg_div);
 });
+
+function build_member_div(username) {
+    if (username.toLowerCase() == "küken") {
+        return `<div class="member"><img class="member_picture" src="/static/images/kueken.png" alt=""><div class="member_name"><div>${username}</div></div></div>`;
+    }
+    if (username.toLowerCase() == "einhorn") {
+        return `<div class="member"><img class="member_picture" src="/static/images/einhorn.png" alt=""><div class="member_name"><div>${username}</div></div></div>`;
+    }
+    if (username.toLowerCase() == "faultier") {
+        return `<div class="member"><img class="member_picture" src="/static/images/faultier.png" alt=""><div class="member_name"><div>${username}</div></div></div>`;
+    }
+    if (username.toLowerCase() == "känguru") {
+        return `<div class="member"><img class="member_picture" src="/static/images/kaenguru.png" alt=""><div class="member_name"><div>${username}</div></div></div>`;
+    }
+    if (username.toLowerCase() == "krokodil") {
+        return `<div class="member"><img class="member_picture" src="/static/images/krokodil.png" alt=""><div class="member_name"><div>${username}</div></div></div>`;
+    }
+    if (username.toLowerCase() == "schaf") {
+        return `<div class="member"><img class="member_picture" src="/static/images/schaf.png" alt=""><div class="member_name"><div>${username}</div></div></div>`;
+    }
+    if (username.toLowerCase() == "wiesel") {
+        return `<div class="member"><img class="member_picture" src="/static/images/wiesel.png" alt=""><div class="member_name"><div>${username}</div></div></div>`;
+    }
+    if (username.toLowerCase() == "zebra") {
+        return `<div class="member"><img class="member_picture" src="/static/images/zebra.png" alt=""><div class="member_name"><div>${username}</div></div></div>`;
+    }
+
+    return `<div class="member"><img class="member_picture" src="/static/images/profile.png" alt=""><div class="member_name"><div>${username}</div></div></div>`;
+}

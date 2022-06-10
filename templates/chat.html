@@ -17,6 +17,26 @@
             {% for i in user_list %}
             <div>
                 <div class="member">
+                    {% if i.lower() == "küken" %}
+                    <img class="member_picture" src="/static/images/kueken.png" alt="">
+                    {% elif i.lower() == "einhorn" %}
+                    <img class="member_picture" src="/static/images/einhorn.png" alt="">
+                    {% elif i.lower() == "faultier" %}
+                    <img class="member_picture" src="/static/images/faultier.png" alt="">
+                    {% elif i.lower() == "känguru" %}
+                    <img class="member_picture" src="/static/images/kaenguru.png" alt="">
+                    {% elif i.lower() == "krokodil" %}
+                    <img class="member_picture" src="/static/images/krokodil.png" alt="">
+                    {% elif i.lower() == "schaf" %}
+                    <img class="member_picture" src="/static/images/schaf.png" alt="">
+                    {% elif i.lower() == "wiesel" %}
+                    <img class="member_picture" src="/static/images/wiesel.png" alt="">
+                    {% elif i.lower() == "zebra" %}
+                    <img class="member_picture" src="/static/images/zebra.png" alt="">    
+                    {% else %}
+                    <img class="member_picture" src="/static/images/profile.png" alt="">
+                    {% endif %}
+
                     <div class="member_name">
                         <div>{{ i }}</div>
                     </div>
