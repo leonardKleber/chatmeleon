@@ -2,6 +2,20 @@ var socket = io();
 
 socket.on('connect', function() {
     socket.emit('initial_connection', this_username);
+
+    document.getElementById('message_input_form').onsubmit = function (e) {
+        e.preventDefault();
+
+        var message_input = document.getElementById('message_input');
+        var msg = message_input.value;
+
+        if (msg != '') {
+            socket.emit('user_message', {'username': this_username, 'message': msg});
+
+            message_input.value = '';
+            message_input.focus();
+        }
+    }
 });
 
 socket.on('initial_connection', function(username) {
@@ -19,9 +33,3 @@ socket.on('user_message', function(data) {
     msg_div.innerHTML = `<b>${data.username}:</b> ${data.message}`;
     document.getElementById('messages').append(msg_div);
 });
-
-function send_message() {
-    var msg = document.getElementById('input_msg').value;
-    document.getElementById('input_msg').value = '';
-    socket.emit('user_message', {'username': this_username, 'message': msg});
-}

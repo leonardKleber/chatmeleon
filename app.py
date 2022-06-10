@@ -21,13 +21,10 @@ def chat():
     username = request.args.get('username')
     password = request.args.get('password')
 
-    if password != APP_PASSWORD:
-        return redirect(url_for('index'))
-
-    if username and password:
+    if username and password == APP_PASSWORD:
         return render_template('chat.html', user=username)
-    else:
-        return redirect(url_for('index'))
+    
+    return redirect(url_for('index'))
 
 
 @socketio.on('initial_connection')

@@ -5,10 +5,34 @@
 </head>
 
 <body>
-    <div id="messages"></div>
+    <div class="widget">
+        <div class="group_title">
+            <div><b>Chat Members</b></div>
+        </div>
 
-    <input type="text" id="input_msg">
-    <button type="submit" id="send_msg" onclick="send_message()">SEND</button>
+        <div class="member_list" id="member_list">
+            <div>
+                <div class="member">
+                    <div class="member_name">
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="role_description" id="role_description">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="messages" id="messages"></div>
+
+    <form class="input_for_message" id="message_input_form">
+        <label>
+            <input class="message_input" type="text" id="message_input" placeholder="Enter message here...">
+        </label>
+    </form>
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
