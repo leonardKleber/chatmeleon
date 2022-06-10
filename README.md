@@ -40,21 +40,7 @@ Install all requirements with the following command:
 ```
 pip3 install -r requirements.txt
 ```
-### 4. Necessary code changes
-Go to app.py and look for the following code block:
-```
-if __name__ == '__main__':
-    #socketio.run(app)
-    app.run()
-```
-If you just want to test the app on your computer, change it to:
-```
-if __name__ == '__main__':
-    socketio.run(app)
-    #app.run()
-```
-If you want to deploy the code, leave it as it is.
-### 5. Run the app
+### 4. Run the app
 Run the app like the following:
 ```
 python3 app.py
