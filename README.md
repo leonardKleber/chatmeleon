@@ -13,7 +13,7 @@ and role descriptions. The purpose of the game is to teach teenagers about the p
 ## Try out the project
 You can try out the app here:
 
-*links to the app when it is deployed*
+https://chatmeleon.herokuapp.com/
 
 ## Set up the project on your local machine
 ### 1. Clone the project
