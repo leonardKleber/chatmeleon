@@ -25,8 +25,7 @@ def chat():
     if username and password == APP_PASSWORD:
         USER_LIST.append(username)
 
-        # Return list without last entry -> added by client.
-        return render_template('chat.html', user=username, user_list=USER_LIST[:-1])
+        return render_template('chat.html', user=username, user_list=USER_LIST[:-1], role=username.lower())
     
     return redirect(url_for('index'))
 

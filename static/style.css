@@ -212,7 +212,7 @@ html, body {
     border-radius: 10px;
 
     width: 30%;
-    height: 40%;
+    height: 25%;
 
     text-align: center;
 
@@ -228,7 +228,7 @@ html, body {
     border-color: var(--font_on_widget);
     border-radius: 5px;
 
-    line-height: 30px;
+    line-height: 100%;
     margin-bottom: 3%;
 
     font-size: 20px;

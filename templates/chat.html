@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Chat Prototype</title>
+	<title>CHATmeleon</title>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
     <link href="/static/style.css" rel="stylesheet">
@@ -45,10 +45,107 @@
             {% endfor%}
         </div>
 
+        {% if role == "küken" %}
         <div class="role_description" id="role_description">
-            <div></div>
-            <div></div>
+            <div>Du schlüpfst in eine Rolle! Du bist jetzt das <b>Küken</b> und unterhältst dich mit Freunden aus deiner Klasse im Chat. Ihr redet über den Wandertag oder Ausflug morgen.</div>
+            <div>Wichtig für deine Rolle:</div>
+            <ul>
+                <li>Schau zu und lies aufmerksam den Chat!</li>
+            </ul>
+            <div>Küken ist neu und sucht Anschluss bei euch. <u>Unterhalte dich auch mit Küken!</u></div>
         </div>
+        {% endif %}
+
+        {% if role == "faultier" %}
+        <div class="role_description" id="role_description">
+            <div>Du schlüpfst in eine Rolle! Du bist jetzt das <b>Faultier</b> und unterhältst dich mit Freunden aus deiner Klasse im Chat. Ihr redet über den Wandertag oder Ausflug morgen.</div>
+            <div>Wichtig für deine Rolle:</div>
+            <ul>
+                <li>Schule ist leicht.</li>
+                <li>Du liebst Computerspiele.</li>
+                <li>Du bist gerne mal faul.</li>
+            </ul>
+            <div>Küken ist neu und sucht Anschluss bei euch. <u>Unterhalte dich auch mit Küken!</u></div>
+        </div>
+        {% endif %}
+
+        {% if role == "schaf" %}
+        <div class="role_description" id="role_description">
+            <div>Du schlüpfst in eine Rolle! Du bist jetzt das <b>Schaf</b> und unterhältst dich mit Freunden aus deiner Klasse im Chat. Ihr redet über den Wandertag oder Ausflug morgen.</div>
+            <div>Wichtig für deine Rolle:</div>
+            <ul>
+                <li>Du bist eher gemütlich.</li>
+                <li>Du bist Klassensprecher*in.</li>
+                <li>Du liebst es mit anderen zusammen zu sein.</li>
+            </ul>
+            <div>Küken ist neu und sucht Anschluss bei euch. <u>Unterhalte dich auch mit Küken!</u></div>
+        </div>
+        {% endif %}
+
+        {% if role == "wiesel" %}
+        <div class="role_description" id="role_description">
+            <div>Du schlüpfst in eine Rolle! Du bist jetzt das <b>Wiesel</b> und unterhältst dich mit Freunden aus deiner Klasse im Chat. Ihr redet über den Wandertag oder Ausflug morgen.</div>
+            <div>Wichtig für deine Rolle:</div>
+            <ul>
+                <li>Du bist clever.</li>
+                <li>Du bist immer in Bewegung.</li>
+                <li>Du magst Computerspiele.</li>
+            </ul>
+            <div>Küken ist neu und sucht Anschluss bei euch. <u>Unterhalte dich auch mit Küken!</u></div>
+        </div>
+        {% endif %}
+
+        {% if role == "einhorn" %}
+        <div class="role_description" id="role_description">
+            <div>Du schlüpfst in eine Rolle! Du bist jetzt das <b>Einhorn</b> und unterhältst dich mit Freunden aus deiner Klasse im Chat. Ihr redet über den Wandertag oder Ausflug morgen.</div>
+            <div>Wichtig für deine Rolle:</div>
+            <ul>
+                <li>Du liebst tanzen, Partys und flirten.</li>
+                <li>Du machst viel für die Schule.</li>
+                <li>Du bist immer für andere da.</li>
+            </ul>
+            <div>Küken ist neu und sucht Anschluss bei euch. <u>Unterhalte dich auch mit Küken!</u></div>
+        </div>
+        {% endif %}
+
+        {% if role == "krokodil" %}
+        <div class="role_description" id="role_description">
+            <div>Du schlüpfst in eine Rolle! Du bist jetzt das <b>Krokodil</b> und unterhältst dich mit Freunden aus deiner Klasse im Chat. Ihr redet über den Wandertag oder Ausflug morgen.</div>
+            <div>Wichtig für deine Rolle:</div>
+            <ul>
+                <li>Essen ist ganz wichtig für dich.</li>
+                <li>Du bist sehr geduldig.</li>
+                <li>Du bist ein guter Beobachter.</li>
+            </ul>
+            <div>Küken ist neu und sucht Anschluss bei euch. <u>Unterhalte dich auch mit Küken!</u></div>
+        </div>
+        {% endif %}
+
+        {% if role == "känguru" %}
+        <div class="role_description" id="role_description">
+            <div>Du schlüpfst in eine Rolle! Du bist jetzt das <b>Känguru</b> und unterhältst dich mit Freunden aus deiner Klasse im Chat. Ihr redet über den Wandertag oder Ausflug morgen.</div>
+            <div>Wichtig für deine Rolle:</div>
+            <ul>
+                <li>Du bist sportlich.</li>
+                <li>Schule ist nicht dein Ding.</li>
+                <li>Du bist sehr selbstbewusst.</li>
+            </ul>
+            <div>Küken ist neu und sucht Anschluss bei euch. <u>Unterhalte dich auch mit Küken!</u></div>
+        </div>
+        {% endif %}
+
+        {% if role == "zebra" %}
+        <div class="role_description" id="role_description">
+            <div>Du schlüpfst in eine Rolle! Du bist jetzt das <b>Zebra</b> und unterhältst dich mit Freunden aus deiner Klasse im Chat. Ihr redet über den Wandertag oder Ausflug morgen.</div>
+            <div>Wichtig für deine Rolle:</div>
+            <ul>
+                <li>Du bist neugierig.</li>
+                <li>Du bist viel unterwegs.</li>
+                <li>Du bist leicht zu begeistern.</li>
+            </ul>
+            <div>Küken ist neu und sucht Anschluss bei euch. <u>Unterhalte dich auch mit Küken!</u></div>
+        </div>
+        {% endif %}
     </div>
 
     <div class="messages" id="messages"></div>

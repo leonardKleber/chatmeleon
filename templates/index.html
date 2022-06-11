@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Chat Prototype</title>
+	<title>CHATmeleon</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
+    <link href="/static/style.css" rel="stylesheet">
 </head>
 
 <body>
-    <div>Welcome to CHATmeleon</div>
-    <form action="/chat">
-        <div>Username</div>
+    <div class="login_box">
+        <div class="headline"><b>Welcome to CHATmeleon</b></div>
 
-        <div><input type="text" name="username"></div>
+        <form action="/chat">
+            <div><label>Username</label></div>
 
-        <div>App Password</div>
+            <div><label>
+                <input class="login_field" type="text" name="username">
+            </label></div>
 
-        <div><input type="password" name="password"></div>
+            <div><label>App Password</label></div>
 
-        <button type="submit">Join</button>
-    </form>
+            <div><label>
+                <input class="login_field" type="password" name="password">
+            </label></div>
+
+            <button class="login_button" type="submit"><b>Join</b></button>
+        </form>
+    </div>
 </body>
 
 </html>
