@@ -23,7 +23,8 @@ def chat():
     password = request.args.get('password')
 
     if username and password == APP_PASSWORD:
-        USER_LIST.append(username)
+        if username != 'spectator':
+            USER_LIST.append(username)
 
         return render_template('chat.html', user=username, user_list=USER_LIST[:-1], role=username.lower())
     
@@ -32,13 +33,13 @@ def chat():
 
 @socketio.on('initial_connection')
 def handle_initial_connection(username):
-    print('user' + username + ' has connected to the server')
+    print(username + ' has connected to the server')
     emit('initial_connection', username, broadcast=True)
 
 
 @socketio.on('user_message')
 def handle_user_message(data):
-    print('user' + data['username'] + ': ' + data['message'])
+    print(data['username'] + ': ' + data['message'])
     emit('user_message', data, broadcast=True)
 
 

@@ -12,7 +12,7 @@ socket.on('connect', function() {
         var message_input = document.getElementById('message_input');
         var msg = message_input.value;
 
-        if (msg != '') {
+        if (msg != '' && this_role != 'spectator') {
             socket.emit('user_message', {'username': this_username, 'message': msg});
 
             message_input.value = '';
@@ -24,13 +24,15 @@ socket.on('connect', function() {
 socket.on('initial_connection', function(username) {
     console.log('user' + username + ' has connected to the server');
 
-    var msg_div = document.createElement('div');
-    msg_div.innerHTML = `<div class="join_announcement"><b>${username}</b> has joined the room</div>`;
-    document.getElementById('messages').append(msg_div);
+    if (username != 'spectator') {
+        var msg_div = document.createElement('div');
+        msg_div.innerHTML = `<div class="join_announcement"><b>${username}</b> has joined the room</div>`;
+        document.getElementById('messages').append(msg_div);
 
-    var new_user = document.createElement('div');
-    new_user.innerHTML = build_member_div(username);
-    document.getElementById('member_list').appendChild(new_user);
+        var new_user = document.createElement('div');
+        new_user.innerHTML = build_member_div(username);
+        document.getElementById('member_list').appendChild(new_user);
+    }
 
     message_counter = message_counter + 1;
 });
@@ -47,7 +49,7 @@ socket.on('user_message', function(data) {
     }
 
     document.getElementById('messages').append(msg_div);
-
+    
     message_counter = message_counter + 1;
 });
 
