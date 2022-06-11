@@ -45,6 +45,7 @@ def handle_user_message(data):
 
 @socketio.on('clear_chat')
 def handle_clear_chat(username):
+    USER_LIST = []
     print(username + ' has cleared the chat')
     emit('clear_chat', username, broadcast=True)
 
