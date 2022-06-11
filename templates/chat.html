@@ -146,6 +146,10 @@
             <div>Küken ist neu und sucht Anschluss bei euch. <u>Unterhalte dich auch mit Küken!</u></div>
         </div>
         {% endif %}
+
+        {% if role == "spectator" %}
+        <button class="clear_button" onclick="clear_chat()">Clear Chat</button>
+        {% endif %}
     </div>
 
     <div class="messages" id="messages"></div>

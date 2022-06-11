@@ -258,20 +258,24 @@ html, body {
 
 .clear_button {
     background-color: var(--widget_color);
+    color: var(--font_on_widget);
+
+    position: absolute;
+    width: 98%;
+    height: 28%;
+    bottom: 1%;
 
     border-style: solid;
     border-width: 5px;
     border-color: var(--font_on_widget);
     border-radius: 10px;
 
-    height: 70px;
-    width: 150px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+
+    padding: 1%;
 
     font-size: 30px;
-
-    color: var(--font_on_widget);
-
-    margin-top: 37%;
 }
 
 .clear_button:hover {

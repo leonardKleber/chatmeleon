@@ -22,7 +22,7 @@ socket.on('connect', function() {
 });
 
 socket.on('initial_connection', function(username) {
-    console.log('user' + username + ' has connected to the server');
+    console.log(username + ' has connected to the server');
 
     if (username != 'spectator') {
         var msg_div = document.createElement('div');
@@ -38,7 +38,7 @@ socket.on('initial_connection', function(username) {
 });
 
 socket.on('user_message', function(data) {
-    console.log('user' + data.username + ': ' + data.message);
+    console.log(data.username + ': ' + data.message);
 
     var msg_div = document.createElement('div');
 
@@ -51,6 +51,13 @@ socket.on('user_message', function(data) {
     document.getElementById('messages').append(msg_div);
     
     message_counter = message_counter + 1;
+});
+
+socket.on('clear_chat', function(username) {
+    console.log(username + ' has cleared the chat');
+    
+    document.getElementById('messages').innerHTML = '';
+    document.getElementById('member_list').innerHTML = '';
 });
 
 function build_member_div(username) {
@@ -87,6 +94,10 @@ function build_member_div(username) {
     }
 
     return `<div class="member"><img class="member_picture" src="/static/images/profile.png" alt=""><div class="member_name"><div>${username}</div></div></div>`;
+}
+
+function clear_chat() {
+    socket.emit('clear_chat', this_username);
 }
 
 function check_for_scrolling() {

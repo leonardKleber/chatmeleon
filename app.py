@@ -43,6 +43,12 @@ def handle_user_message(data):
     emit('user_message', data, broadcast=True)
 
 
+@socketio.on('clear_chat')
+def handle_clear_chat(username):
+    print(username + ' has cleared the chat')
+    emit('clear_chat', username, broadcast=True)
+
+
 if __name__ == '__main__':
     socketio.run(app)
     #app.run()
