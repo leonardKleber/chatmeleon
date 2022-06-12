@@ -37,6 +37,22 @@ def handle_initial_connection(username):
     emit('initial_connection', username, broadcast=True)
 
 
+@socketio.on('user_disconnection')
+def handle_user_disconnection(username):
+    print(username + ' has disconnected from the server')
+
+    global USER_LIST
+    new_user_list = []
+
+    for i in USER_LIST:
+        if i != username:
+            new_user_list.append(i)
+
+    USER_LIST = new_user_list
+
+    emit('user_disconnection', {'userlist': USER_LIST, 'user': username}, broadcast=True)
+
+
 @socketio.on('user_message')
 def handle_user_message(data):
     print(data['username'] + ': ' + data['message'])

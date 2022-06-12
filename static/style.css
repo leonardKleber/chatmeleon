@@ -38,6 +38,28 @@ html, body {
     padding-top: 2%;
 }
 
+.disconnect_button {
+    background-color: var(--widget_color);
+    color: var(--font_on_widget);
+
+    position: absolute;
+    width: 30%;
+    height: 5%;
+
+    border-style: solid;
+    border-width: 5px;
+    border-color: var(--font_on_widget);
+    border-radius: 10px;
+
+    font-size: 25px;
+
+    right: 2%;
+}
+
+.disconnect_button:hover {
+    background-color: var(--background_color);
+}
+
 .member_list {
     height: 60%;
     overflow-y: scroll;

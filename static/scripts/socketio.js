@@ -26,7 +26,7 @@ socket.on('initial_connection', function(username) {
 
     if (username != 'spectator') {
         var msg_div = document.createElement('div');
-        msg_div.innerHTML = `<div class="join_announcement"><b>${username}</b> has joined the room</div>`;
+        msg_div.innerHTML = `<div class="join_announcement"><b>${username}</b> has connected to the server</div>`;
         document.getElementById('messages').append(msg_div);
 
         var new_user = document.createElement('div');
@@ -59,6 +59,14 @@ socket.on('clear_chat', function(username) {
     document.getElementById('messages').innerHTML = '';
     document.getElementById('member_list').innerHTML = '';
 });
+
+socket.on('user_disconnection', function(data) {
+    update_user_list(data.userlist);
+
+    var msg_div = document.createElement('div');
+    msg_div.innerHTML = `<div class="join_announcement"><b>${data.user}</b> has disconnected from the server</div>`;
+    document.getElementById('messages').append(msg_div);
+})
 
 function build_member_div(username) {
     if (username.toLowerCase() == "küken") {
@@ -94,6 +102,22 @@ function build_member_div(username) {
     }
 
     return `<div class="member"><img class="member_picture" src="/static/images/profile.png" alt=""><div class="member_name"><div>${username}</div></div></div>`;
+}
+
+function update_user_list(new_list) {
+    document.getElementById('member_list').innerHTML = '';
+
+    var members = document.createElement('div');
+
+    for (var i of new_list) {
+        members.innerHTML = members.innerHTML + build_member_div(i)
+    }
+
+    document.getElementById('member_list').append(members)    
+}
+
+function disconnect() {
+    socket.emit('user_disconnection', this_username)
 }
 
 function clear_chat() {
