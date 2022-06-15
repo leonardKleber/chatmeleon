@@ -33,13 +33,13 @@ def chat():
 
 @socketio.on('initial_connection')
 def handle_initial_connection(username):
-    print(username + ' has connected to the server')
+    # print(username + ' has connected to the server')
     emit('initial_connection', username, broadcast=True)
 
 
 @socketio.on('user_disconnection')
 def handle_user_disconnection(username):
-    print(username + ' has disconnected from the server')
+    # print(username + ' has disconnected from the server')
 
     global USER_LIST
     new_user_list = []
@@ -55,14 +55,14 @@ def handle_user_disconnection(username):
 
 @socketio.on('user_message')
 def handle_user_message(data):
-    print(data['username'] + ': ' + data['message'])
+    # print(data['username'] + ': ' + data['message'])
     emit('user_message', data, broadcast=True)
 
 
 @socketio.on('clear_chat')
 def handle_clear_chat(username):
     USER_LIST.clear()
-    print(username + ' has cleared the chat')
+    # print(username + ' has cleared the chat')
     emit('clear_chat', username, broadcast=True)
 
 
