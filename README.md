@@ -15,6 +15,8 @@ You can try out the app here:
 
 https://chatmeleon.herokuapp.com/
 
+Password: leonardKleber
+
 ## Set up the project on your local machine
 ### 1. Clone the project
 Clone the project to your machine. Make sure Python3 and pip are already installed on your system.
