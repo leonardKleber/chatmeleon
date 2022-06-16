@@ -22,8 +22,6 @@ socket.on('connect', function() {
 });
 
 socket.on('initial_connection', function(username) {
-    // console.log(username + ' has connected to the server');
-
     if (username != 'spectator') {
         var msg_div = document.createElement('div');
         msg_div.innerHTML = `<div class="join_announcement"><b>${username}</b> has connected to the server</div>`;
@@ -38,8 +36,6 @@ socket.on('initial_connection', function(username) {
 });
 
 socket.on('user_message', function(data) {
-    // console.log(data.username + ': ' + data.message);
-
     var msg_div = document.createElement('div');
 
     if (data.username == this_username) {
@@ -54,8 +50,6 @@ socket.on('user_message', function(data) {
 });
 
 socket.on('clear_chat', function(username) {
-    // console.log(username + ' has cleared the chat');
-    
     document.getElementById('messages').innerHTML = '';
     document.getElementById('member_list').innerHTML = '';
 });

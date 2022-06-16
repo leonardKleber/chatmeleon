@@ -1,13 +1,13 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 from flask_socketio import SocketIO, emit
 
 
-APP_PASSWORD = 'chat1223'
+APP_PASSWORD = 'leonardKleber'
 USER_LIST = []
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'chat_prototype'
+app.config['SECRET_KEY'] = 'chatmeleon'
 
 socketio = SocketIO(app)
 
@@ -22,7 +22,7 @@ def chat():
     username = request.args.get('username')
     password = request.args.get('password')
 
-    if username and password == APP_PASSWORD:
+    if username and password == encrypt(APP_PASSWORD, 1):
         if username != 'spectator':
             USER_LIST.append(username)
 
@@ -64,6 +64,19 @@ def handle_clear_chat(username):
     USER_LIST.clear()
     # print(username + ' has cleared the chat')
     emit('clear_chat', username, broadcast=True)
+
+
+def encrypt(string, shift):
+    cipher = ''
+    for char in string:
+        if char == ' ':
+            cipher = cipher + char
+        elif char.isupper():
+            cipher = cipher + chr((ord(char) + shift - 65) % 26 + 65)
+        else:
+            cipher = cipher + chr((ord(char) + shift -97) % 26 + 97)
+
+    return cipher
 
 
 if __name__ == '__main__':
