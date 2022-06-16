@@ -8,12 +8,12 @@ form.onsubmit = function() {
     form.submit();
 };
 
-function caesar_cipher(str, num) {
+function caesar_cipher(string, shift) {
     var result = '';
     var charcode = 0;
 
-    for (var i = 0; i < str.length; i++) {
-        charcode = (str[i].charCodeAt()) + num;
+    for (var i = 0; i < string.length; i++) {
+        charcode = (string[i].charCodeAt()) + shift;
         result += String.fromCharCode(charcode);
     }
         

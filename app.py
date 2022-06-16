@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_socketio import SocketIO, emit
 
+from encryption import *
+
 
 APP_PASSWORD = 'leonardKleber'
 USER_LIST = []
@@ -64,19 +66,6 @@ def handle_clear_chat(username):
     USER_LIST.clear()
     # print(username + ' has cleared the chat')
     emit('clear_chat', username, broadcast=True)
-
-
-def encrypt(string, shift):
-    cipher = ''
-    for char in string:
-        if char == ' ':
-            cipher = cipher + char
-        elif char.isupper():
-            cipher = cipher + chr((ord(char) + shift - 65) % 26 + 65)
-        else:
-            cipher = cipher + chr((ord(char) + shift -97) % 26 + 97)
-
-    return cipher
 
 
 if __name__ == '__main__':
