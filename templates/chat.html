@@ -10,12 +10,13 @@
 <body>
     <div class="widget">
         <div class="group_title">
-            <div>
-                <b>Online Members</b>
-                <a href="/">
-                    <button class="disconnect_button" onclick="disconnect()">Disconnect</button>
-                </a>
-            </div>
+            <div><b>Online Members</b></div>
+        </div>
+
+        <div>
+            <a href="/">
+                <button class="disconnect_button" onclick="disconnect()">Disconnect</button>
+            </a>
         </div>
 
         <div class="member_list" id="member_list">
@@ -170,7 +171,7 @@
 
 <script type="text/javascript">
     const this_username = `{{ user }}`;
-    const this_role = `{{ role }}`
+    const this_role = `{{ role }}`;
 </script>
 
 <script src="{{ url_for('static', filename='scripts/socketio.js') }}"></script>
